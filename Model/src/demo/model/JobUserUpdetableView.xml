@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobUserUpdetableView"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="Job.SEQUENZA_JOB, 
+       UserTable.ID_USER, 
+       UserTable.MATRICOLA, 
+       UserTable.NUMBER_TELEPHONE"
+  FromList="JOB Job, USER_TABLE UserTable"
+  Where="Job.SEQUENZA_JOB = UserTable.ID_USER">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="demo.model.JobUserUpdetableView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="Job"
+    Entity="demo.model.Job"/>
+  <EntityUsage
+    Name="UserTable"
+    Entity="demo.model.UserTable">
+    <DesignTime>
+      <Attr Name="_customjoin" Value="true"/>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="SequenzaJob"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="SequenzaJob"
+    EntityUsage="Job"
+    AliasName="SEQUENZA_JOB"/>
+  <ViewAttribute
+    Name="IdUser"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="IdUser"
+    EntityUsage="UserTable"
+    AliasName="ID_USER"/>
+  <ViewAttribute
+    Name="Matricola"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Matricola"
+    EntityUsage="UserTable"
+    AliasName="MATRICOLA"/>
+  <ViewAttribute
+    Name="NumberTelephone"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="NumberTelephone"
+    EntityUsage="UserTable"
+    AliasName="NUMBER_TELEPHONE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="demo.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

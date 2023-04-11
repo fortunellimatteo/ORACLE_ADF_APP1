@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Department"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEPARTMENT"
+  AliasName="Department"
+  BindingStyle="OracleName"
+  RowClass="demo.model.DepartmentImpl"
+  EffectiveDateType="EffectiveDated">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="IdDepartment"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="ID_DEPARTMENT"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="NameDepartment"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="NAME_DEPARTMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fromdate"
+    ColumnName="FROMDATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEPARTMENT"
+    IsEffectiveStartDate="true"/>
+  <Attribute
+    Name="Todate"
+    ColumnName="TODATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DEPARTMENT"
+    IsEffectiveEndDate="true"/>
+  <Attribute
+    Name="SysEffectiveDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="$none$"/>
+  <Key
+    Name="DepartmentPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPARTMENT_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.Department.IdDepartment"/>
+    </AttrArray>
+  </Key>
+</Entity>
